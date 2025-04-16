@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Primary Meta Tags -->
+    <title>AMPERE.WORKS | DIY Hardware & Engineering</title>
+    <meta name="title" content="AMPERE.WORKS | DIY Hardware & Engineering" />
+    <meta
+      name="description"
+      content="A DIY hardware company focused on off-the-beaten-path design and no-nonsense engineering. Creating tools and products to get people interested and educated about hardware."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ampere.works" />
+    <meta
+      property="og:title"
+      content="AMPERE.WORKS | DIY Hardware & Engineering"
+    />
+    <meta
+      property="og:description"
+      content="A DIY hardware company focused on off-the-beaten-path design and no-nonsense engineering. Creating tools and products to get people interested and educated about hardware."
+    />
+    <meta property="og:image" content="https://ampere.works/meta.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ampere.works" />
+    <meta
+      property="twitter:title"
+      content="AMPERE.WORKS | DIY Hardware & Engineering"
+    />
+    <meta
+      property="twitter:description"
+      content="A DIY hardware company focused on off-the-beaten-path design and no-nonsense engineering. Creating tools and products to get people interested and educated about hardware."
+    />
+    <meta property="twitter:image" content="https://ampere.works/meta.png" />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "ampere-black": "#0f0f0f",
+              "ampere-white": "#f0f0f0",
+              "ampere-yellow": "#fec607",
+              "ampere-red": "#ff3b30",
+            },
+            fontFamily: {
+              mono: ["Space Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+      body {
+        background-color: #0f0f0f;
+        color: #f0f0f0;
+        font-family: "Space Mono", monospace;
+      }
+
+      .grid-pattern {
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+
+      .hover-glow:hover {
+        box-shadow: 0 0 15px rgba(254, 198, 7, 0.5);
+      }
+
+      /* Adafruit-inspired blinking cursor effect */
+      .blinking-cursor::after {
+        content: "|";
+        animation: blink 1s step-end infinite;
+      }
+
+      @keyframes blink {
+        from,
+        to {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen grid-pattern">
+    <header class="container mx-auto py-8 px-4">
+      <nav class="flex justify-between items-center">
+        <div class="text-2xl font-bold text-ampere-yellow tracking-tight">
+          AMPERE<span class="text-ampere-white">.WORKS</span>
+        </div>
+        <ul class="hidden md:flex space-x-8">
+          <li>
+            <a
+              href="#about"
+              class="text-ampere-white hover:text-ampere-yellow transition-colors"
+              >ABOUT</a
+            >
+          </li>
+          <li>
+            <a
+              href="#services"
+              class="text-ampere-white hover:text-ampere-yellow transition-colors"
+              >SERVICES</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="text-ampere-white hover:text-ampere-yellow transition-colors"
+              >CONTACT</a
+            >
+          </li>
+        </ul>
+        <button class="block md:hidden">
+          <i
+            class="fas fa-bars text-ampere-white hover:text-ampere-yellow transition-colors"
+          ></i>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="container mx-auto px-4 py-20 md:py-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+              <span class="text-ampere-yellow">HARDWARE</span><br />
+              <span class="blinking-cursor">MADE HUMAN</span>
+            </h1>
+            <p class="text-lg mb-8 font-light">
+              Hey there, hardware hackers! We're a DIY hardware company obsessed
+              with off-the-beaten-path design and no-BS engineering. We're
+              building cool stuff to get people excited about hardware again!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#services"
+                class="px-6 py-3 bg-ampere-yellow text-ampere-black font-bold inline-block hover-glow transition-all"
+              >
+                <i class="fas fa-bolt mr-2"></i> HACK WITH US
+              </a>
+              <a
+                href="#contact"
+                class="px-6 py-3 border border-ampere-white text-ampere-white font-bold inline-block hover:border-ampere-yellow hover:text-ampere-yellow transition-all"
+              >
+                <i class="fas fa-paper-plane mr-2"></i> SEND A SIGNAL
+              </a>
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="aspect-square bg-ampere-yellow/10 rounded-lg overflow-hidden"
+            >
+              <img
+                src="img.jpg"
+                alt="Hardware Innovation"
+                class="object-cover w-full h-full mix-blend-luminosity"
+              />
+            </div>
+            <div
+              class="absolute -bottom-4 -right-4 bg-ampere-black p-4 border border-ampere-yellow"
+            >
+              <p class="text-xs uppercase tracking-wider mb-1">Established</p>
+              <p class="text-xl font-bold text-ampere-yellow">INDIA 2023</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 bg-ampere-black/50">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                OUR MISSION<span class="text-ampere-yellow">.</span>
+              </h2>
+              <p class="text-lg mb-6">
+                In India, folks who work with physical things instead of just
+                code often get the side-eye. "Why not just be a software
+                engineer?" they ask. 🙄
+              </p>
+              <p class="mb-6">
+                We think that's ridiculous! Ampere Works is here to bridge the
+                gap between makers and hardware manufacturers. We're building
+                tools that make hardware accessible, exciting, and most
+                importantly - hackable!
+              </p>
+              <p class="mb-6">
+                Think of us as Adafruit for India — a community-driven lab where
+                hardware nerds can geek out about circuits, sensors, and all
+                things tangible. Because sometimes you need to build something
+                you can actually touch!
+              </p>
+              <div class="text-xl italic text-ampere-yellow mt-8">
+                "Makers who work with physical things are somewhat belittled for
+                their choices. We're here to change that."
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-ampere-white/5 p-4">
+                <div class="text-3xl text-ampere-yellow font-bold mb-2">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="font-bold mb-2">DIY CULTURE</h3>
+                <p class="text-sm text-ampere-white/70">
+                  Championing the right to repair, modify, and create hardware
+                  systems. If you bought it, you should be able to hack it!
+                </p>
+              </div>
+              <div class="bg-ampere-white/5 p-4">
+                <div class="text-3xl text-ampere-yellow font-bold mb-2">
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 class="font-bold mb-2">EDUCATION</h3>
+                <p class="text-sm text-ampere-white/70">
+                  Demystifying hardware tech through workshops and open-source
+                  projects. No gatekeeping here!
+                </p>
+              </div>
+              <div class="bg-ampere-white/5 p-4">
+                <div class="text-3xl text-ampere-yellow font-bold mb-2">
+                  <i class="fas fa-seedling"></i>
+                </div>
+                <h3 class="font-bold mb-2">SUSTAINABILITY</h3>
+                <p class="text-sm text-ampere-white/70">
+                  Building hardware that lasts, can be repaired, and won't trash
+                  the planet. E-waste is so 2010.
+                </p>
+              </div>
+              <div class="bg-ampere-white/5 p-4">
+                <div class="text-3xl text-ampere-yellow font-bold mb-2">
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3 class="font-bold mb-2">INNOVATION</h3>
+                <p class="text-sm text-ampere-white/70">
+                  Pushing hardware design beyond conventional limits. Because
+                  "that's how it's always been done" is the enemy of cool new
+                  stuff.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="py-20">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">
+            SERVICES<span class="text-ampere-yellow">.</span>
+          </h2>
+          <p class="text-lg text-center mb-12 max-w-3xl mx-auto">
+            From wild idea to working prototype, we're here to help you build
+            cool stuff. Our services are perfect for makers, startups, and
+            companies who want to get their hands dirty with hardware.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+              class="border border-ampere-white/20 p-6 hover:border-ampere-yellow transition-all"
+            >
+              <div class="text-ampere-yellow text-5xl font-bold mb-4">01</div>
+              <h3 class="text-2xl font-bold mb-3">HARDWARE CONSULTING</h3>
+              <p class="text-ampere-white/80 mb-6">
+                Need help figuring out which microcontroller to use? Or how to
+                optimize your BOM? We've been there, done that, and probably
+                have the circuit scars to prove it.
+              </p>
+              <ul class="text-sm space-y-2 text-ampere-white/70 mb-6">
+                <li>
+                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
+                  Product design and prototyping
+                </li>
+                <li>
+                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
+                  Component sourcing and BOM optimization
+                </li>
+                <li>
+                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
+                  Manufacturing support
+                </li>
+              </ul>
+              <a href="#contact" class="text-ampere-yellow hover:underline"
+                >GET IN TOUCH <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+
+            <div
+              class="border border-ampere-white/20 p-6 hover:border-ampere-yellow transition-all"
+            >
+              <div class="text-ampere-yellow text-5xl font-bold mb-4">02</div>
+              <h3 class="text-2xl font-bold mb-3">3D PRINTING</h3>
+              <p class="text-ampere-white/80 mb-6">
+                Transform your digital designs into physical objects! Our FDM
+                printers are calibrated, optimized, and ready to turn your STL
+                files into real-world parts.
+              </p>
+              <ul class="text-sm space-y-2 text-ampere-white/70 mb-6">
+                <li>
+                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
+                  Rapid prototyping (PLA, PETG, TPU)
+                </li>
+                <li>
+                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
+                  Custom part design assistance
+                </li>
+                <li>
+                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
+                  Small batch production runs
+                </li>
+              </ul>
+              <a href="#contact" class="text-ampere-yellow hover:underline"
+                >REQUEST QUOTE <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+
+            <div
+              class="border border-ampere-white/20 p-6 hover:border-ampere-yellow transition-all"
+            >
+              <div class="text-ampere-yellow text-5xl font-bold mb-4">03</div>
+              <h3 class="text-2xl font-bold mb-3">WORKSHOPS & TRAINING</h3>
+              <p class="text-ampere-white/80 mb-6">
+                Learn by doing! Our hands-on workshops get you soldering,
+                coding, and building right from the start. No boring
+                PowerPoints, just practical skills and actual working projects.
+              </p>
+              <ul class="text-sm space-y-2 text-ampere-white/70 mb-6">
+                <li>
+                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
+                  Intro to hardware design (ESP32/Arduino)
+                </li>
+                <li>
+                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
+                  Build-alongs (like our T1 watch workshop)
+                </li>
+                <li>
+                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
+                  Team training for companies
+                </li>
+              </ul>
+              <a href="#contact" class="text-ampere-yellow hover:underline"
+                >JOIN A WORKSHOP <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 bg-ampere-black/50">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">
+            GET IN TOUCH<span class="text-ampere-yellow">.</span>
+          </h2>
+          <p class="text-lg text-center mb-12 max-w-3xl mx-auto">
+            Got a cool project idea? Need some hardware help? Just want to geek
+            out about microcontrollers? We'd love to hear from you!
+          </p>
+
+          <div class="max-w-3xl mx-auto text-center">
+            <div
+              class="mb-12 p-8 border border-ampere-white/20 bg-ampere-black/30"
+            >
+              <h3 class="text-2xl font-bold mb-6">Let's Talk Hardware!</h3>
+              <p class="mb-8">
+                The fastest way to reach us is through WhatsApp. We typically
+                respond within a few hours (except when we're deep in a
+                debugging rabbit hole).
+              </p>
+
+              <a
+                href="https://wa.me/+919886192024"
+                target="_blank"
+                class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-ampere-yellow text-ampere-black font-bold hover-glow transition-all text-lg"
+              >
+                <i class="fab fa-whatsapp text-2xl"></i>
+                Chat on WhatsApp
+              </a>
+
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 text-left"
+              >
+                <div>
+                  <h4 class="font-bold text-lg mb-4">Or Email Us</h4>
+                  <p class="flex items-center gap-3">
+                    <i class="fas fa-envelope text-ampere-yellow"></i>
+                    <span class="font-bold">kailash@ampere.works</span>
+                  </p>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-lg mb-4">Based In</h4>
+                  <p class="flex items-center gap-3">
+                    <i class="fas fa-map-marker-alt text-ampere-yellow"></i>
+                    <span class="font-bold">Bangalore, India</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-xl font-bold mb-4">Follow Our Build Journey</h3>
+            <div class="flex justify-center space-x-6">
+              <a
+                href="https://github.com/hifnoise"
+                class="text-ampere-white hover:text-ampere-yellow transition-colors"
+                target="_blank"
+                title="GitHub"
+              >
+                <i class="fab fa-github text-2xl"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/hifinoise"
+                target="_blank"
+                class="text-ampere-white hover:text-ampere-yellow transition-colors"
+                title="Instagram"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/kailash-nr-b82979221/"
+                target="_blank"
+                class="text-ampere-white hover:text-ampere-yellow transition-colors"
+                title="LinkedIn"
+              >
+                <i class="fab fa-linkedin text-2xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-12 border-t border-ampere-white/10">
+      <div class="container mx-auto px-4 text-center">
+        <div class="mb-6">
+          <div
+            class="text-2xl font-bold text-ampere-yellow tracking-tight inline-flex items-center gap-2"
+          >
+            <i class="fas fa-bolt"></i> AMPERE<span class="text-ampere-white"
+              >.WORKS</span
+            >
+          </div>
+        </div>
+        <p class="text-ampere-white/80 mb-6 max-w-2xl mx-auto">
+          A DIY hardware company focused on off-the-beaten-path design and
+          no-nonsense engineering. Creating tools and products to get people
+          interested and educated about hardware.
+        </p>
+        <p
+          class="text-sm text-ampere-white/60 flex items-center justify-center"
+        >
+          <i class="fas fa-heart text-ampere-yellow mr-2"></i> Made with love in
+          Bengaluru, India
+        </p>
+        <p class="text-sm text-ampere-white/60 mt-4">
+          © 2025 Ampere Works. All circuits reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle functionality
+      document.querySelector("button").addEventListener("click", function () {
+        const mobileMenu = document.createElement("div");
+        mobileMenu.className =
+          "fixed inset-0 bg-ampere-black z-50 flex flex-col items-center justify-center";
+        mobileMenu.innerHTML = `
+          <button class="absolute top-8 right-4">
+            <i class="fas fa-times text-ampere-white hover:text-ampere-yellow transition-colors"></i>
+          </button>
+          <ul class="text-center space-y-6">
+            <li>
+              <a href="#about" class="text-ampere-white hover:text-ampere-yellow transition-colors text-2xl">ABOUT</a>
+            </li>
+            <li>
+              <a href="#services" class="text-ampere-white hover:text-ampere-yellow transition-colors text-2xl">SERVICES</a>
+            </li>
+            <li>
+              <a href="#contact" class="text-ampere-white hover:text-ampere-yellow transition-colors text-2xl">CONTACT</a>
+            </li>
+          </ul>
+        `;
+        document.body.appendChild(mobileMenu);
+
+        // Close menu when clicking on the close button
+        mobileMenu
+          .querySelector("button")
+          .addEventListener("click", function () {
+            document.body.removeChild(mobileMenu);
+          });
+
+        // Close menu when clicking on a menu item
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", function () {
+            document.body.removeChild(mobileMenu);
+          });
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Add header background on scroll
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+          header.classList.add(
+            "bg-ampere-black/90",
+            "backdrop-blur-sm",
+            "fixed",
+            "top-0",
+            "left-0",
+            "right-0",
+            "z-50",
+            "transition-all"
+          );
+        } else {
+          header.classList.remove(
+            "bg-ampere-black/90",
+            "backdrop-blur-sm",
+            "fixed",
+            "top-0",
+            "left-0",
+            "right-0",
+            "z-50",
+            "transition-all"
+          );
+        }
+      });
+
+      // Reveal animations on scroll
+      const revealElements = document.querySelectorAll("section");
+
+      function checkReveal() {
+        const windowHeight = window.innerHeight;
+        const revealPoint = 150;
+
+        revealElements.forEach((element) => {
+          const revealTop = element.getBoundingClientRect().top;
+
+          if (revealTop < windowHeight - revealPoint) {
+            element.classList.add("opacity-100", "translate-y-0");
+            element.classList.remove("opacity-0", "translate-y-10");
+          }
+        });
+      }
+
+      // Add initial classes
+      revealElements.forEach((element) => {
+        element.classList.add(
+          "transition-all",
+          "duration-700",
+          "opacity-0",
+          "translate-y-10"
+        );
+      });
+
+      // Check on load and scroll
+      window.addEventListener("load", checkReveal);
+      window.addEventListener("scroll", checkReveal);
+
+      // Easter egg - type 'ampere' anywhere
+      let secretCode = "";
+      const secretKey = "ampere";
+
+      document.addEventListener("keydown", (e) => {
+        secretCode += e.key.toLowerCase();
+        secretCode = secretCode.slice(-secretKey.length);
+
+        if (secretCode === secretKey) {
+          document.body.classList.add("bg-ampere-yellow/10");
+          setTimeout(() => {
+            document.body.classList.remove("bg-ampere-yellow/10");
+            console.log(
+              "%c⚡ Ampere.works says hi! ⚡",
+              "color: #fec607; font-size: 20px; font-weight: bold;"
+            );
+          }, 500);
+        }
+      });
+    </script>
+  </body>
+</html>
