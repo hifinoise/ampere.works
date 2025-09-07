@@ -1,617 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Primary Meta Tags -->
-    <title>AMPERE.WORKS | DIY Hardware & Engineering</title>
-    <meta name="title" content="AMPERE.WORKS | DIY Hardware & Engineering" />
-    <meta
-      name="description"
-      content="A DIY hardware company focused on off-the-beaten-path design and no-nonsense engineering. Creating tools and products to get people interested and educated about hardware."
-    />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ampere.works" />
-    <meta
-      property="og:title"
-      content="AMPERE.WORKS | DIY Hardware & Engineering"
-    />
-    <meta
-      property="og:description"
-      content="A DIY hardware company focused on off-the-beaten-path design and no-nonsense engineering. Creating tools and products to get people interested and educated about hardware."
-    />
-    <meta property="og:image" content="https://ampere.works/meta.png" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://ampere.works" />
-    <meta
-      property="twitter:title"
-      content="AMPERE.WORKS | DIY Hardware & Engineering"
-    />
-    <meta
-      property="twitter:description"
-      content="A DIY hardware company focused on off-the-beaten-path design and no-nonsense engineering. Creating tools and products to get people interested and educated about hardware."
-    />
-    <meta property="twitter:image" content="https://ampere.works/meta.png" />
-
-    <!-- Meta Tags Generated with https://metatags.io -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ampere Works</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "ampere-black": "#0f0f0f",
-              "ampere-white": "#f0f0f0",
-              "ampere-yellow": "#fec607",
-              "ampere-red": "#ff3b30",
-            },
-            fontFamily: {
-              mono: ["Space Mono", "monospace"],
-            },
-          },
-        },
-      };
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        teal: {
+                            50: '#F0FDFA',
+                            100: '#CCFBF1',
+                            200: '#99F6E4',
+                            300: '#5EEAD4',
+                            400: '#2DD4BF',
+                            500: '#14B8A6',
+                            600: '#0D9488',
+                            700: '#0F766E',
+                            800: '#115E59',
+                            900: '#134E4A',
+                            950: '#042F2E'
+                        },
+                        cream: '#FBF8EF',
+                        yellow: {
+                            400: '#FFB433',
+                            500: '#FF9800',
+                            600: '#F57C00'
+                        }
+                    },
+                    fontFamily: {
+                        'mono': ['Space Mono', 'monospace']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-soft': 'pulse-soft 4s ease-in-out infinite',
+                        'slide-in': 'slide-in 0.6s ease-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        'pulse-soft': {
+                            '0%, 100%': { opacity: '0.6' },
+                            '50%': { opacity: '1' }
+                        },
+                        'slide-in': {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
-
-      body {
-        background-color: #0f0f0f;
-        color: #f0f0f0;
-        font-family: "Space Mono", monospace;
-      }
-
-      .grid-pattern {
-        background-image: linear-gradient(
-            rgba(255, 255, 255, 0.05) 1px,
-            transparent 1px
-          ),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-        background-size: 20px 20px;
-      }
-
-      .hover-glow:hover {
-        box-shadow: 0 0 15px rgba(254, 198, 7, 0.5);
-      }
-
-      /* Adafruit-inspired blinking cursor effect */
-      .blinking-cursor::after {
-        content: "|";
-        animation: blink 1s step-end infinite;
-      }
-
-      @keyframes blink {
-        from,
-        to {
-          opacity: 1;
+        .pixel-border {
+            image-rendering: pixelated;
+            border: 2px solid currentColor;
         }
-        50% {
-          opacity: 0;
+        
+        .paper-texture {
+            background-color: #FBF8EF;
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(13,148,136,0.04) 1px, transparent 0);
+            background-size: 20px 20px;
         }
-      }
+        
+        .dark .paper-texture {
+            background-color: #042F2E;
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(94,234,212,0.06) 1px, transparent 0);
+        }
+
+        .grid-overlay {
+            background-image: 
+                linear-gradient(rgba(13,148,136,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(13,148,136,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .dark .grid-overlay {
+            background-image: 
+                linear-gradient(rgba(94,234,212,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(94,234,212,0.05) 1px, transparent 1px);
+        }
+
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+
+        .stagger-animation > * {
+            animation-delay: calc(var(--delay) * 0.1s);
+        }
     </style>
-  </head>
-  <body class="min-h-screen grid-pattern">
-    <header class="container mx-auto py-8 px-4">
-      <nav class="flex justify-between items-center">
-        <div class="text-2xl font-bold text-ampere-yellow tracking-tight">
-          AMPERE<span class="text-ampere-white">.WORKS</span>
+</head>
+<body class="bg-cream dark:bg-teal-950 text-teal-800 dark:text-teal-200 font-mono transition-colors duration-500 grid-overlay">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-cream/80 dark:bg-teal-950/80 backdrop-blur-xl border-b border-teal-600 dark:border-teal-400 z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-teal-700 dark:text-teal-300 hover:text-yellow-400 transition-colors cursor-pointer">
+                AMPERE_WORKS
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#products" class="hover:text-yellow-400 transition-colors relative group">
+                    products
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#collective" class="hover:text-yellow-400 transition-colors relative group">
+                    collective
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#consulting" class="hover:text-yellow-400 transition-colors relative group">
+                    consulting
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="hover:text-yellow-400 transition-colors relative group">
+                    contact
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <button id="dark-mode-toggle" class="ml-4 p-2 pixel-border bg-teal-600 dark:bg-teal-700 text-cream hover:bg-teal-700 dark:hover:bg-teal-500 transition-all duration-300 hover-lift">
+                    <svg class="w-4 h-4 dark:hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                    <svg class="w-4 h-4 hidden dark:block transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="dark-mode-toggle-mobile" class="mr-4 p-2 pixel-border bg-teal-600 dark:bg-teal-700 text-cream hover:bg-teal-700 dark:hover:bg-teal-500 transition-all duration-300 hover-lift">
+                    <svg class="w-4 h-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                    <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                </button>
+                <button id="menu-toggle" class="text-teal-700 dark:text-teal-300 hover:text-yellow-400 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-        <ul class="hidden md:flex space-x-8">
-          <li>
-            <a
-              href="#about"
-              class="text-ampere-white hover:text-ampere-yellow transition-colors"
-              >ABOUT</a
-            >
-          </li>
-          <li>
-            <a
-              href="#services"
-              class="text-ampere-white hover:text-ampere-yellow transition-colors"
-              >SERVICES</a
-            >
-          </li>
-          <li>
-            <a
-              href="#contact"
-              class="text-ampere-white hover:text-ampere-yellow transition-colors"
-              >CONTACT</a
-            >
-          </li>
-        </ul>
-        <button class="block md:hidden">
-          <i
-            class="fas fa-bars text-ampere-white hover:text-ampere-yellow transition-colors"
-          ></i>
-        </button>
-      </nav>
-    </header>
+        <div id="mobile-menu" class="hidden md:hidden bg-cream dark:bg-teal-950 border-t border-teal-400 dark:border-teal-600">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#products" class="block py-2 hover:text-yellow-400 transition-colors">products</a>
+                <a href="#collective" class="block py-2 hover:text-yellow-400 transition-colors">collective</a>
+                <a href="#consulting" class="block py-2 hover:text-yellow-400 transition-colors">consulting</a>
+                <a href="#contact" class="block py-2 hover:text-yellow-400 transition-colors">contact</a>
+            </div>
+        </div>
+    </nav>
 
-    <main>
-      <!-- Hero Section -->
-      <section class="container mx-auto px-4 py-20 md:py-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              <span class="text-ampere-yellow">HARDWARE</span><br />
-              <span class="blinking-cursor">MADE HUMAN</span>
-            </h1>
-            <p class="text-lg mb-8 font-light">
-              Hey there, hardware hackers! We're a DIY hardware company obsessed
-              with off-the-beaten-path design and no-BS engineering. We're
-              building cool stuff to get people excited about hardware again!
+    <!-- Hero Section -->
+    <section class="pt-24 min-h-screen flex items-center">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+            <div class="animate-slide-in">
+                <div class="text-yellow-400 text-sm mb-4 animate-pulse-soft">[HARDWARE_COLLECTIVE]</div>
+                <h1 class="text-4xl md:text-6xl font-bold text-teal-700 dark:text-teal-300 mb-6 leading-tight">
+                    Making hardware<br>
+                    <span class="text-teal-500 dark:text-teal-400">accessible</span><br>
+                    one kit at a time
+                </h1>
+                <p class="text-lg text-teal-600 dark:text-teal-400 mb-8 leading-relaxed">
+                    DIY hardware focused on off-the-beaten-path design and no-nonsense engineering. 
+                    Building tools, kits, and knowledge to democratize hardware in India.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-yellow-400 text-teal-900 px-6 py-3 font-bold hover:bg-yellow-500 hover:scale-105 transition-all duration-300 hover-lift">
+                        VIEW_PRODUCTS
+                    </button>
+                    <button class="border-2 border-teal-400 dark:border-teal-500 text-teal-700 dark:text-teal-300 px-6 py-3 font-bold hover:bg-teal-400 hover:text-cream dark:hover:bg-teal-600 dark:hover:text-cream hover:scale-105 transition-all duration-300 hover-lift">
+                        HARDWARE_CONSULTING
+                    </button>
+                </div>
+            </div>
+            <div class="relative" style="--delay: 2;">
+                <div class="w-full h-96 paper-texture border-teal-600 dark:border-teal-400 pixel-border flex items-center justify-center animate-float">
+                    <div class="text-center">
+                        <div class="text-6xl text-teal-500 dark:text-teal-400 mb-4 animate-pulse-soft">⚡</div>
+                        <div class="text-teal-600 dark:text-teal-300 text-sm">HARDWARE_VISUALIZATION</div>
+                    </div>
+                </div>
+                <!-- Floating elements with staggered animations -->
+                <div class="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-float opacity-80" style="animation-delay: 1s;"></div>
+                <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-teal-500 dark:bg-teal-400 transform rotate-45 animate-float" style="animation-delay: 2s;"></div>
+                <div class="absolute top-1/3 -left-6 w-4 h-4 bg-teal-300 dark:bg-teal-600 rounded-full animate-pulse-soft" style="animation-delay: 0.5s;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 paper-texture">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <div class="text-yellow-400 text-sm mb-4">[PRODUCT_LINEUP]</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-700 dark:text-teal-300 mb-4">Hardware that teaches</h2>
+                <p class="text-teal-600 dark:text-teal-400 max-w-2xl mx-auto">
+                    Each product is designed as a learning tool first, a functional device second. 
+                    Because understanding is power.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 stagger-animation">
+                <!-- T1E Watch -->
+                <div class="paper-texture border-teal-600 dark:border-teal-400 pixel-border p-6 hover:border-yellow-400 dark:hover:border-yellow-400 transition-all duration-500 group hover-lift" style="--delay: 1;">
+                    <div class="text-4xl text-teal-600 dark:text-teal-400 mb-4 group-hover:scale-110 transition-transform duration-300">⌚</div>
+                    <h3 class="text-xl font-bold text-teal-700 dark:text-teal-300 mb-3">T1E_EPAPER_WATCH</h3>
+                    <p class="text-teal-600 dark:text-teal-400 mb-4">
+                        Smart wearable with weeks of battery life. 
+                        Time for time's sake.
+                    </p>
+                    <div class="text-sm text-yellow-400 group-hover:text-yellow-500 font-mono transition-colors">
+                        [ePaper • ESP32 • 4+ Days Battery]
+                    </div>
+                </div>
+
+                <!-- Micro Mouse -->
+                <div class="paper-texture border-teal-600 dark:border-teal-400 pixel-border p-6 hover:border-yellow-400 dark:hover:border-yellow-400 transition-all duration-500 group hover-lift" style="--delay: 2;">
+                    <div class="text-4xl text-teal-600 dark:text-teal-400 mb-4 group-hover:scale-110 transition-transform duration-300">🐭</div>
+                    <h3 class="text-xl font-bold text-teal-700 dark:text-teal-300 mb-3">MICRO_MOUSE</h3>
+                    <p class="text-teal-600 dark:text-teal-400 mb-4">
+                        Maze-solving robot kit for competitive programming meets hardware.
+                    </p>
+                    <div class="text-sm text-yellow-400 group-hover:text-yellow-500 font-mono transition-colors">
+                        [Sensors • Algorithms • Competition]
+                    </div>
+                </div>
+
+                <!-- BLE Guitar Amp -->
+                <div class="paper-texture border-teal-600 dark:border-teal-400 pixel-border p-6 hover:border-yellow-400 dark:hover:border-yellow-400 transition-all duration-500 group hover-lift" style="--delay: 3;">
+                    <div class="text-4xl text-teal-600 dark:text-teal-400 mb-4 group-hover:scale-110 transition-transform duration-300">🎸</div>
+                    <h3 class="text-xl font-bold text-teal-700 dark:text-teal-300 mb-3">BLE_GUITAR_AMP</h3>
+                    <p class="text-teal-600 dark:text-teal-400 mb-4">
+                        Wireless guitar amplifier with Bluetooth control.
+                        Because cables complicate the creative process.
+                    </p>
+                    <div class="text-sm text-yellow-400 group-hover:text-yellow-500 font-mono transition-colors">
+                        [Bluetooth • DSP • Progressive_Ready]
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Printing Service -->
+            <div class="mt-12 paper-texture border-teal-600 dark:border-teal-400 pixel-border p-8 text-center hover:border-yellow-400 transition-all duration-500 hover-lift">
+                <h3 class="text-2xl font-bold text-teal-700 dark:text-teal-300 mb-4 font-mono">FDM_3D_PRINTING</h3>
+                <p class="text-teal-600 dark:text-teal-400 mb-6 max-w-2xl mx-auto">
+                    Rapid prototyping services for makers who need parts yesterday. 
+                    From concept to physical in days, not weeks.
+                </p>
+                <button class="pixel-border border-yellow-400 text-yellow-400 px-6 py-2 font-bold hover:bg-yellow-400 hover:text-teal-900 hover:scale-105 transition-all duration-300 font-mono hover-lift">
+                    REQUEST_QUOTE
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collective Section -->
+    <section id="collective" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <div class="text-yellow-400 text-sm mb-4">[HARDWARE_COLLECTIVE]</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-700 dark:text-teal-300 mb-4">United we hack</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 stagger-animation mb-12">
+                <!-- Absurd Industries -->
+                <div class="text-center hover-lift" style="--delay: 1;">
+                    <div class="w-16 h-16 bg-teal-400 dark:bg-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <span class="text-2xl text-cream">🧪</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-teal-700 dark:text-teal-300 mb-3">ABSURD_INDUSTRIES</h3>
+                    <p class="text-teal-600 dark:text-teal-400 mb-4">The sassy side of science. Radical experiments in maker education.</p>
+                    <div class="text-sm text-teal-500 mb-3">Kailash - Contributor</div>
+                    <a href="https://absurd.industries/" class="text-yellow-400 hover:text-yellow-500 font-bold transition-colors">
+                        EXPLORE_ABSURD →
+                    </a>
+                </div>
+
+                <!-- Deku -->
+                <div class="text-center hover-lift" style="--delay: 2;">
+                    <div class="w-16 h-16 bg-teal-400 dark:bg-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <span class="text-2xl text-cream">🌱</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-teal-700 dark:text-teal-300 mb-3">DEKU</h3>
+                    <p class="text-teal-600 dark:text-teal-400 mb-4">Growing sustainable tech solutions from first principles.</p>
+                    <a href="https://github.com/balub/CoryDora" class="text-yellow-400 hover:text-yellow-500 font-bold transition-colors">
+                        VIEW_CODE →
+                    </a>
+                </div>
+
+                <!-- Ronin Toys -->
+                <div class="text-center hover-lift" style="--delay: 3;">
+                    <div class="w-16 h-16 bg-teal-400 dark:bg-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <span class="text-2xl text-cream">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-teal-700 dark:text-teal-300 mb-3">RONIN_TOYS</h3>
+                    <p class="text-teal-600 dark:text-teal-400 mb-4">Interactive cat toys powered by micro mouse tech. Coming soon to FOSS India.</p>
+                    <div class="text-yellow-400 font-bold animate-pulse-soft">LAUNCHING_SOON</div>
+                </div>
+            </div>
+
+            <!-- Hardware Syndicate -->
+            <div class="paper-texture border-teal-600 dark:border-teal-400 pixel-border p-8 text-center hover:border-yellow-400 transition-all duration-500 hover-lift">
+                <h3 class="text-2xl font-bold text-teal-700 dark:text-teal-300 mb-4">HARDWARE_SYNDICATE</h3>
+                <p class="text-teal-600 dark:text-teal-400 mb-6 max-w-2xl mx-auto">
+                    Monthly-ish meetups for hardware enthusiasts in Bangalore. 
+                    Deep technical discussions, project showcases, and collaborative problem-solving.
+                </p>
+                <a href="https://wa.me/+919886192024" target="_blank" class="pixel-border border-yellow-400 text-yellow-400 px-6 py-2 font-bold hover:bg-yellow-400 hover:text-teal-900 hover:scale-105 transition-all duration-300 font-mono hover-lift inline-block">
+                    JOIN_SYNDICATE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consulting Section -->
+    <section id="consulting" class="py-20 paper-texture">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="text-yellow-400 text-sm mb-4">[CONSULTING_SERVICES]</div>
+            <h2 class="text-3xl md:text-4xl font-bold text-teal-700 dark:text-teal-300 mb-8">Hardware consulting that works</h2>
+            <p class="text-lg text-teal-600 dark:text-teal-400 mb-12 leading-relaxed">
+                Two years of turning hardware problems into working solutions. 
+                From "I have an idea" to "here's your functioning prototype."
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#services"
-                class="px-6 py-3 bg-ampere-yellow text-ampere-black font-bold inline-block hover-glow transition-all"
-              >
-                <i class="fas fa-bolt mr-2"></i> HACK WITH US
-              </a>
-              <a
-                href="#contact"
-                class="px-6 py-3 border border-ampere-white text-ampere-white font-bold inline-block hover:border-ampere-yellow hover:text-ampere-yellow transition-all"
-              >
-                <i class="fas fa-paper-plane mr-2"></i> SEND A SIGNAL
-              </a>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12 stagger-animation">
+                <div class="text-left hover-lift" style="--delay: 1;">
+                    <h3 class="text-xl font-bold text-teal-700 dark:text-teal-300 mb-4">Product Development</h3>
+                    <ul class="space-y-2 text-teal-600 dark:text-teal-400">
+                        <li class="hover:text-yellow-400 transition-colors">• Circuit design & PCB layout</li>
+                        <li class="hover:text-yellow-400 transition-colors">• Firmware development</li>
+                        <li class="hover:text-yellow-400 transition-colors">• Rapid prototyping</li>
+                        <li class="hover:text-yellow-400 transition-colors">• Manufacturing guidance</li>
+                    </ul>
+                </div>
+                <div class="text-left hover-lift" style="--delay: 2;">
+                    <h3 class="text-xl font-bold text-teal-700 dark:text-teal-300 mb-4">Education & Training</h3>
+                    <ul class="space-y-2 text-teal-600 dark:text-teal-400">
+                        <li class="hover:text-yellow-400 transition-colors">• Workshop design</li>
+                        <li class="hover:text-yellow-400 transition-colors">• Technical curriculum development</li>
+                        <li class="hover:text-yellow-400 transition-colors">• Maker space setup</li>
+                        <li class="hover:text-yellow-400 transition-colors">• Team training</li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <div class="relative">
-            <div
-              class="aspect-square bg-ampere-yellow/10 rounded-lg overflow-hidden"
-            >
-              <img
-                src="img.jpg"
-                alt="Hardware Innovation"
-                class="object-cover w-full h-full mix-blend-luminosity"
-              />
-            </div>
-            <div
-              class="absolute -bottom-4 -right-4 bg-ampere-black p-4 border border-ampere-yellow"
-            >
-              <p class="text-xs uppercase tracking-wider mb-1">Established</p>
-              <p class="text-xl font-bold text-ampere-yellow">INDIA 2023</p>
-            </div>
-          </div>
+
+            <a href="https://wa.me/+919886192024" target="_blank" class="bg-yellow-400 text-teal-900 px-8 py-3 font-bold hover:bg-yellow-500 hover:scale-105 transition-all duration-300 inline-block hover-lift">
+                START_PROJECT
+            </a>
         </div>
-      </section>
+    </section>
 
-      <!-- About Section -->
-      <section id="about" class="py-20 bg-ampere-black/50">
-        <div class="container mx-auto px-4">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                OUR MISSION<span class="text-ampere-yellow">.</span>
-              </h2>
-              <p class="text-lg mb-6">
-                In India, folks who work with physical things instead of just
-                code often get the side-eye. "Why not just be a software
-                engineer?" they ask. 🙄
-              </p>
-              <p class="mb-6">
-                We think that's ridiculous! Ampere Works is here to bridge the
-                gap between makers and hardware manufacturers. We're building
-                tools that make hardware accessible, exciting, and most
-                importantly - hackable!
-              </p>
-              <p class="mb-6">
-                Think of us as Adafruit for India — a community-driven lab where
-                hardware nerds can geek out about circuits, sensors, and all
-                things tangible. Because sometimes you need to build something
-                you can actually touch!
-              </p>
-              <div class="text-xl italic text-ampere-yellow mt-8">
-                "Makers who work with physical things are somewhat belittled for
-                their choices. We're here to change that."
-              </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="text-yellow-400 text-sm mb-4">[GET_IN_TOUCH]</div>
+            <h2 class="text-3xl md:text-4xl font-bold text-teal-700 dark:text-teal-300 mb-8">Contact</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8 stagger-animation">
+                <div class="hover-lift" style="--delay: 1;">
+                    <h3 class="text-xl font-bold text-teal-700 dark:text-teal-300 mb-6">FOSS India 2025</h3>
+                    <div class="space-y-4 text-teal-600 dark:text-teal-400">
+                        <div class="hover:text-yellow-400 transition-colors">
+                            <div class="font-bold">Hardware Devroom</div>
+                            <div>September 20-21, 2025</div>
+                        </div>
+                        <div class="hover:text-yellow-400 transition-colors">
+                            <div class="font-bold">Featuring</div>
+                            <div>T1E kits, Ronin cat toys, live demos</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hover-lift" style="--delay: 2;">
+                    <h3 class="text-xl font-bold text-teal-700 dark:text-teal-300 mb-6">Direct Contact</h3>
+                    <div class="space-y-4">
+                        <div class="hover:scale-105 transition-transform">
+                            <div class="font-bold text-teal-600 dark:text-teal-400 mb-2">WhatsApp</div>
+                            <a href="https://wa.me/+919886192024" target="_blank" class="text-yellow-400 font-bold hover:text-yellow-500 transition-colors">
+                                +91 98861 92024
+                            </a>
+                        </div>
+                        <div class="hover:scale-105 transition-transform">
+                            <div class="font-bold text-teal-600 dark:text-teal-400 mb-2">Email</div>
+                            <div class="text-yellow-400 font-bold">kailash@ampere.works</div>
+                        </div>
+                        <div class="hover:scale-105 transition-transform">
+                            <div class="font-bold text-teal-600 dark:text-teal-400 mb-2">Location</div>
+                            <div class="text-teal-600 dark:text-teal-400">Bangalore, Karnataka</div>
+                        </div>
+                        <div class="hover:scale-105 transition-transform">
+                            <div class="font-bold text-teal-600 dark:text-teal-400 mb-2">GitHub</div>
+                            <a href="https://github.com/hifinoise" target="_blank" class="text-yellow-400 font-bold hover:text-yellow-500 transition-colors">
+                                github.com/hifinoise
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="bg-ampere-white/5 p-4">
-                <div class="text-3xl text-ampere-yellow font-bold mb-2">
-                  <i class="fas fa-tools"></i>
-                </div>
-                <h3 class="font-bold mb-2">DIY CULTURE</h3>
-                <p class="text-sm text-ampere-white/70">
-                  Championing the right to repair, modify, and create hardware
-                  systems. If you bought it, you should be able to hack it!
-                </p>
-              </div>
-              <div class="bg-ampere-white/5 p-4">
-                <div class="text-3xl text-ampere-yellow font-bold mb-2">
-                  <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h3 class="font-bold mb-2">EDUCATION</h3>
-                <p class="text-sm text-ampere-white/70">
-                  Demystifying hardware tech through workshops and open-source
-                  projects. No gatekeeping here!
-                </p>
-              </div>
-              <div class="bg-ampere-white/5 p-4">
-                <div class="text-3xl text-ampere-yellow font-bold mb-2">
-                  <i class="fas fa-seedling"></i>
-                </div>
-                <h3 class="font-bold mb-2">SUSTAINABILITY</h3>
-                <p class="text-sm text-ampere-white/70">
-                  Building hardware that lasts, can be repaired, and won't trash
-                  the planet. E-waste is so 2010.
-                </p>
-              </div>
-              <div class="bg-ampere-white/5 p-4">
-                <div class="text-3xl text-ampere-yellow font-bold mb-2">
-                  <i class="fas fa-lightbulb"></i>
-                </div>
-                <h3 class="font-bold mb-2">INNOVATION</h3>
-                <p class="text-sm text-ampere-white/70">
-                  Pushing hardware design beyond conventional limits. Because
-                  "that's how it's always been done" is the enemy of cool new
-                  stuff.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Services Section -->
-      <section id="services" class="py-20">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">
-            SERVICES<span class="text-ampere-yellow">.</span>
-          </h2>
-          <p class="text-lg text-center mb-12 max-w-3xl mx-auto">
-            From wild idea to working prototype, we're here to help you build
-            cool stuff. Our services are perfect for makers, startups, and
-            companies who want to get their hands dirty with hardware.
-          </p>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div
-              class="border border-ampere-white/20 p-6 hover:border-ampere-yellow transition-all"
-            >
-              <div class="text-ampere-yellow text-5xl font-bold mb-4">01</div>
-              <h3 class="text-2xl font-bold mb-3">HARDWARE CONSULTING</h3>
-              <p class="text-ampere-white/80 mb-6">
-                Need help figuring out which microcontroller to use? Or how to
-                optimize your BOM? We've been there, done that, and probably
-                have the circuit scars to prove it.
-              </p>
-              <ul class="text-sm space-y-2 text-ampere-white/70 mb-6">
-                <li>
-                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
-                  Product design and prototyping
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
-                  Component sourcing and BOM optimization
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
-                  Manufacturing support
-                </li>
-              </ul>
-              <a href="#contact" class="text-ampere-yellow hover:underline"
-                >GET IN TOUCH <i class="fas fa-arrow-right"></i
-              ></a>
-            </div>
-
-            <div
-              class="border border-ampere-white/20 p-6 hover:border-ampere-yellow transition-all"
-            >
-              <div class="text-ampere-yellow text-5xl font-bold mb-4">02</div>
-              <h3 class="text-2xl font-bold mb-3">3D PRINTING</h3>
-              <p class="text-ampere-white/80 mb-6">
-                Transform your digital designs into physical objects! Our FDM
-                printers are calibrated, optimized, and ready to turn your STL
-                files into real-world parts.
-              </p>
-              <ul class="text-sm space-y-2 text-ampere-white/70 mb-6">
-                <li>
-                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
-                  Rapid prototyping (PLA, PETG, TPU)
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
-                  Custom part design assistance
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
-                  Small batch production runs
-                </li>
-              </ul>
-              <a href="#contact" class="text-ampere-yellow hover:underline"
-                >REQUEST QUOTE <i class="fas fa-arrow-right"></i
-              ></a>
-            </div>
-
-            <div
-              class="border border-ampere-white/20 p-6 hover:border-ampere-yellow transition-all"
-            >
-              <div class="text-ampere-yellow text-5xl font-bold mb-4">03</div>
-              <h3 class="text-2xl font-bold mb-3">WORKSHOPS & TRAINING</h3>
-              <p class="text-ampere-white/80 mb-6">
-                Learn by doing! Our hands-on workshops get you soldering,
-                coding, and building right from the start. No boring
-                PowerPoints, just practical skills and actual working projects.
-              </p>
-              <ul class="text-sm space-y-2 text-ampere-white/70 mb-6">
-                <li>
-                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
-                  Intro to hardware design (ESP32/Arduino)
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
-                  Build-alongs (like our T1 watch workshop)
-                </li>
-                <li>
-                  <i class="fas fa-angle-right text-ampere-yellow mr-2"></i>
-                  Team training for companies
-                </li>
-              </ul>
-              <a href="#contact" class="text-ampere-yellow hover:underline"
-                >JOIN A WORKSHOP <i class="fas fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="py-20 bg-ampere-black/50">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">
-            GET IN TOUCH<span class="text-ampere-yellow">.</span>
-          </h2>
-          <p class="text-lg text-center mb-12 max-w-3xl mx-auto">
-            Got a cool project idea? Need some hardware help? Just want to geek
-            out about microcontrollers? We'd love to hear from you!
-          </p>
-
-          <div class="max-w-3xl mx-auto text-center">
-            <div
-              class="mb-12 p-8 border border-ampere-white/20 bg-ampere-black/30"
-            >
-              <h3 class="text-2xl font-bold mb-6">Let's Talk Hardware!</h3>
-              <p class="mb-8">
-                The fastest way to reach us is through WhatsApp. We typically
-                respond within a few hours (except when we're deep in a
-                debugging rabbit hole).
-              </p>
-
-              <a
-                href="https://wa.me/+919886192024"
-                target="_blank"
-                class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-ampere-yellow text-ampere-black font-bold hover-glow transition-all text-lg"
-              >
-                <i class="fab fa-whatsapp text-2xl"></i>
-                Chat on WhatsApp
-              </a>
-
-              <div
-                class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 text-left"
-              >
-                <div>
-                  <h4 class="font-bold text-lg mb-4">Or Email Us</h4>
-                  <p class="flex items-center gap-3">
-                    <i class="fas fa-envelope text-ampere-yellow"></i>
-                    <span class="font-bold">kailash@ampere.works</span>
-                  </p>
+    <!-- Footer -->
+    <footer class="bg-teal-700 dark:bg-teal-950 text-cream py-12 border-t border-teal-600 dark:border-teal-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 stagger-animation">
+                <div style="--delay: 1;">
+                    <div class="text-xl font-bold mb-4 hover:text-yellow-400 transition-colors">AMPERE_WORKS</div>
+                    <p class="text-teal-200 dark:text-teal-400">
+                        Hardware collective making electronics accessible across India.
+                    </p>
                 </div>
-
-                <div>
-                  <h4 class="font-bold text-lg mb-4">Based In</h4>
-                  <p class="flex items-center gap-3">
-                    <i class="fas fa-map-marker-alt text-ampere-yellow"></i>
-                    <span class="font-bold">Bangalore, India</span>
-                  </p>
+                <div style="--delay: 2;">
+                    <div class="font-bold mb-4">Collective</div>
+                    <div class="space-y-2 text-teal-200 dark:text-teal-400">
+                        <div><a href="https://absurd.industries/" class="hover:text-cream hover:text-yellow-400 transition-colors">Absurd Industries</a></div>
+                        <div><a href="https://github.com/balub/CoryDora" class="hover:text-cream hover:text-yellow-400 transition-colors">Deku Projects</a></div>
+                        <div class="hover:text-yellow-400 transition-colors cursor-pointer">Ronin Toys</div>
+                    </div>
                 </div>
-              </div>
+                <div style="--delay: 3;">
+                    <div class="font-bold mb-4">Services</div>
+                    <div class="space-y-2 text-teal-200 dark:text-teal-400">
+                        <div class="hover:text-yellow-400 transition-colors cursor-pointer">Hardware Consulting</div>
+                        <div class="hover:text-yellow-400 transition-colors cursor-pointer">Product Development</div>
+                        <div class="hover:text-yellow-400 transition-colors cursor-pointer">3D Printing</div>
+                        <div class="hover:text-yellow-400 transition-colors cursor-pointer">Technical Training</div>
+                    </div>
+                </div>
             </div>
-
-            <h3 class="text-xl font-bold mb-4">Follow Our Build Journey</h3>
-            <div class="flex justify-center space-x-6">
-              <a
-                href="https://github.com/hifnoise"
-                class="text-ampere-white hover:text-ampere-yellow transition-colors"
-                target="_blank"
-                title="GitHub"
-              >
-                <i class="fab fa-github text-2xl"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/hifinoise"
-                target="_blank"
-                class="text-ampere-white hover:text-ampere-yellow transition-colors"
-                title="Instagram"
-              >
-                <i class="fab fa-instagram text-2xl"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/kailash-nr-b82979221/"
-                target="_blank"
-                class="text-ampere-white hover:text-ampere-yellow transition-colors"
-                title="LinkedIn"
-              >
-                <i class="fab fa-linkedin text-2xl"></i>
-              </a>
+            <div class="border-t border-teal-600 dark:border-teal-700 mt-8 pt-8 text-center text-teal-200 dark:text-teal-400">
+                <p class="hover:text-yellow-400 transition-colors">© 2025 Ampere Works. Bangalore, Karnataka.</p>
             </div>
-          </div>
         </div>
-      </section>
-    </main>
-
-    <footer class="py-12 border-t border-ampere-white/10">
-      <div class="container mx-auto px-4 text-center">
-        <div class="mb-6">
-          <div
-            class="text-2xl font-bold text-ampere-yellow tracking-tight inline-flex items-center gap-2"
-          >
-            <i class="fas fa-bolt"></i> AMPERE<span class="text-ampere-white"
-              >.WORKS</span
-            >
-          </div>
-        </div>
-        <p class="text-ampere-white/80 mb-6 max-w-2xl mx-auto">
-          A DIY hardware company focused on off-the-beaten-path design and
-          no-nonsense engineering. Creating tools and products to get people
-          interested and educated about hardware.
-        </p>
-        <p
-          class="text-sm text-ampere-white/60 flex items-center justify-center"
-        >
-          <i class="fas fa-heart text-ampere-yellow mr-2"></i> Made with love in
-          Bengaluru, India
-        </p>
-        <p class="text-sm text-ampere-white/60 mt-4">
-          © 2025 Ampere Works. All circuits reserved.
-        </p>
-      </div>
     </footer>
 
     <script>
-      // Mobile menu toggle functionality
-      document.querySelector("button").addEventListener("click", function () {
-        const mobileMenu = document.createElement("div");
-        mobileMenu.className =
-          "fixed inset-0 bg-ampere-black z-50 flex flex-col items-center justify-center";
-        mobileMenu.innerHTML = `
-          <button class="absolute top-8 right-4">
-            <i class="fas fa-times text-ampere-white hover:text-ampere-yellow transition-colors"></i>
-          </button>
-          <ul class="text-center space-y-6">
-            <li>
-              <a href="#about" class="text-ampere-white hover:text-ampere-yellow transition-colors text-2xl">ABOUT</a>
-            </li>
-            <li>
-              <a href="#services" class="text-ampere-white hover:text-ampere-yellow transition-colors text-2xl">SERVICES</a>
-            </li>
-            <li>
-              <a href="#contact" class="text-ampere-white hover:text-ampere-yellow transition-colors text-2xl">CONTACT</a>
-            </li>
-          </ul>
-        `;
-        document.body.appendChild(mobileMenu);
+        // Dark mode state with localStorage persistence
+        let darkMode = localStorage.getItem('darkMode') === 'true' || 
+                      (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
-        // Close menu when clicking on the close button
-        mobileMenu
-          .querySelector("button")
-          .addEventListener("click", function () {
-            document.body.removeChild(mobileMenu);
-          });
+        // Dark mode toggle function
+        function toggleDarkMode() {
+            darkMode = !darkMode;
+            localStorage.setItem('darkMode', darkMode);
+            if (darkMode) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
 
-        // Close menu when clicking on a menu item
-        mobileMenu.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", function () {
-            document.body.removeChild(mobileMenu);
-          });
+        // Initialize dark mode
+        if (darkMode) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
         });
-      });
 
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
+        // Dark mode toggle event listeners
+        document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
+        document.getElementById('dark-mode-toggle-mobile').addEventListener('click', toggleDarkMode);
 
-          const targetId = this.getAttribute("href");
-          if (targetId === "#") return;
-
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: "smooth",
+        // Smooth scrolling for navigation links with offset for fixed nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
             });
-          }
         });
-      });
 
-      // Add header background on scroll
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        if (window.scrollY > 50) {
-          header.classList.add(
-            "bg-ampere-black/90",
-            "backdrop-blur-sm",
-            "fixed",
-            "top-0",
-            "left-0",
-            "right-0",
-            "z-50",
-            "transition-all"
-          );
-        } else {
-          header.classList.remove(
-            "bg-ampere-black/90",
-            "backdrop-blur-sm",
-            "fixed",
-            "top-0",
-            "left-0",
-            "right-0",
-            "z-50",
-            "transition-all"
-          );
-        }
-      });
+        // Intersection Observer for scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-      // Reveal animations on scroll
-      const revealElements = document.querySelectorAll("section");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    entry.target.classList.add('animate-slide-in');
+                }
+            });
+        }, observerOptions);
 
-      function checkReveal() {
-        const windowHeight = window.innerHeight;
-        const revealPoint = 150;
-
-        revealElements.forEach((element) => {
-          const revealTop = element.getBoundingClientRect().top;
-
-          if (revealTop < windowHeight - revealPoint) {
-            element.classList.add("opacity-100", "translate-y-0");
-            element.classList.remove("opacity-0", "translate-y-10");
-          }
+        // Observe elements with stagger animation
+        document.querySelectorAll('.stagger-animation > *').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
         });
-      }
 
-      // Add initial classes
-      revealElements.forEach((element) => {
-        element.classList.add(
-          "transition-all",
-          "duration-700",
-          "opacity-0",
-          "translate-y-10"
-        );
-      });
+        // Parallax effect for floating elements on scroll
+        let ticking = false;
 
-      // Check on load and scroll
-      window.addEventListener("load", checkReveal);
-      window.addEventListener("scroll", checkReveal);
-
-      // Easter egg - type 'ampere' anywhere
-      let secretCode = "";
-      const secretKey = "ampere";
-
-      document.addEventListener("keydown", (e) => {
-        secretCode += e.key.toLowerCase();
-        secretCode = secretCode.slice(-secretKey.length);
-
-        if (secretCode === secretKey) {
-          document.body.classList.add("bg-ampere-yellow/10");
-          setTimeout(() => {
-            document.body.classList.remove("bg-ampere-yellow/10");
-            console.log(
-              "%c⚡ Ampere.works says hi! ⚡",
-              "color: #fec607; font-size: 20px; font-weight: bold;"
-            );
-          }, 500);
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.animate-float');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                element.style.transform = `translateY(${scrolled * speed * 0.1}px)`;
+            });
+            
+            ticking = false;
         }
-      });
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
+
+        // Enhanced nav background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('backdrop-blur-xl', 'bg-opacity-95', 'dark:bg-opacity-95');
+            } else {
+                nav.classList.remove('backdrop-blur-xl', 'bg-opacity-95', 'dark:bg-opacity-95');
+            }
+        });
     </script>
-  </body>
+</body>
 </html>
